@@ -1,7 +1,37 @@
 
 # Description
 
-This is a project made for a Item Catalog Website.
+This is a project made for a Restaurant Menu Website.
+
+# Web Presentation
+
+- The main page shows all the restaurants.
+
+![image](./picture/main.png)
+
+- You can click into a restaurant and check the menus and information. 
+
+![image](./picture/restaurant.png)
+
+- You can login with google account and add your own restaurant.
+
+![image](./picture/login.png)
+
+- Create new restaurant.
+
+![image](./picture/newrestaurant.png)
+
+- You can edit your own restaurant. 
+
+  You can't change other people's restaurant information.
+
+![image](./picture/edit.png)
+
+- Add menus and information including name, description, price and course.
+
+![image](./picture/addmenu.png)
+
+
 
 # Requirements
 
@@ -9,92 +39,50 @@ This is a project made for a Item Catalog Website.
 2. [VirtualBox](https://www.virtualbox.org/)
 3. [SQLAlchemy](https://www.sqlalchemy.org/) module
 4. Flask module
-5. Python3
-
-# <span id="data">Data</span>
-
-1. `python database_setup.py` to build the database.
-
-2. `python lotsofitems.py` to write in the data samples.   
+5. Python3 
 
 # Setup
 
-1. Fork the [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) .
+1. Fork the [Virtual machine](https://github.com/udacity/fullstack-nanodegree-vm) and setup.
+
 2. `sudo pip install -r requirements.txt`
-3. `git clone http://github.com/<username>/fullstack-nanodegree-vm fullstack`
-4. `vagrant up`  to start up the virtual machine.
-5. `vagrant ssh` to log into the virtual machine.
-6. `cd /vagrant`, copy the project into the directory.
-7. Prepare the data according to [Data](#data).
-8. `python project.py` to start the server.
 
-# <span id="view">Browse Instruction</span>
+3. `vagrant up`  to start up the virtual machine.
 
-- See the home page the application:
-http://localhost:5000/
+4. `vagrant ssh` to log into the virtual machine.
 
-- See the JSON endpoint:
-http://localhost:5000/catalog.json
+5. `cd /vagrant`, copy the project into the directory.
 
+6. Prepare the data according to [Data](#data).
 
-# OAuth2.0
-Starter Code for Auth&amp;Auth course
-# Installing the Vagrant VM for ud330 - Authentication & Authorization
+7. `python main.py` to run the Flask web server. In your browser visit **http://localhost:5000** to view the restaurant menu app.  You should be able to view, add, edit, and delete menu items and restaurants.
 
-**Note: If you already have a vagrant machine installed from previous Udacity courses skip to the 'Fetch the Source Code and VM Configuration' section**
+# <span id="data">Data</span>
 
-In Lessons 2,3 and 4 of this course, you'll use a virtual machine (VM) to run a web server and a web app that uses it. The VM is a Linux system that runs on top of your own machine.  You can share files easily between your computer and the VM.
+   1. `python database_setup.py` to initialize the database.
+   2. `python lotsofitems.py` to  populate the database with restaurants and menu items.
 
-We're using the Vagrant software to configure and manage the VM. Here are the tools you'll need to install to get it running:
+# <span id="view">API</span>
 
-### Git
+See the JSON of all the restaurant:
 
-If you don't already have Git installed, [download Git from git-scm.com.](http://git-scm.com/downloads) Install the version for your operating system.
-
-On Windows, Git will provide you with a Unix-style terminal and shell (Git Bash).  
-(On Mac or Linux systems you can use the regular terminal program.)
-
-You will need Git to install the configuration for the VM. If you'd like to learn more about Git, [take a look at our course about Git and Github](http://www.udacity.com/course/ud775).
-
-### VirtualBox
-
-VirtualBox is the software that actually runs the VM. [You can download it from virtualbox.org, here.](https://www.virtualbox.org/wiki/Downloads)  Install the *platform package* for your operating system.  You do not need the extension pack or the SDK. You do not need to launch VirtualBox after installing it.
-
-**Ubuntu 14.04 Note:** If you are running Ubuntu 14.04, install VirtualBox using the Ubuntu Software Center, not the virtualbox.org web site. Due to a [reported bug](http://ubuntuforums.org/showthread.php?t=2227131), installing VirtualBox from the site may uninstall other software you need.
-
-### Vagrant
-
-Vagrant is the software that configures the VM and lets you share files between your host computer and the VM's filesystem.  [You can download it from vagrantup.com.](https://www.vagrantup.com/downloads) Install the version for your operating system.
-
-**Windows Note:** The Installer may ask you to grant network permissions to Vagrant or make a firewall exception. Be sure to allow this.
-
-## Fetch the Source Code and VM Configuration
-
-**Windows:** Use the Git Bash program (installed with Git) to get a Unix-style terminal.  
-**Other systems:** Use your favorite terminal program.
-
-From the terminal, run:
-
-    git clone https://github.com/udacity/OAuth2.0 oauth
-
-This will give you a directory named **oauth** complete with the source code for the flask application, a vagrantfile, and a bootstrap.sh file for installing all of the necessary tools. 
-
-## Run the virtual machine!
-
-Using the terminal, change directory to oauth (**cd oauth**), then type **vagrant up** to launch your virtual machine.
+```url
+http://localhost:5000/restaurant/JSON
+```
 
 
-## Running the Restaurant Menu App
-Once it is up and running, type **vagrant ssh**. This will log your terminal into the virtual machine, and you'll get a Linux shell prompt. When you want to log out, type **exit** at the shell prompt.  To turn the virtual machine off (without deleting anything), type **vagrant halt**. If you do this, you'll need to run **vagrant up** again before you can log into it.
+See the JSON of certain restaurant:
+
+```url
+http://localhost:5000/restaurant/<int:restaurant_id>/menu/JSON
+eg. http://localhost:5000/restaurant/1/menu/JSON
+```
+See the JSON of certain menu of certain restaurant:
+
+```url
+http://localhost:5000/restaurant/<int:restaurant_id>/menu/<int:menu_id>/JSON
+eg. http://localhost:5000/restaurant/1/menu/2/JSON
+```
 
 
-Now that you have Vagrant up and running type **vagrant ssh** to log into your VM.  change to the /vagrant directory by typing **cd /vagrant**. This will take you to the shared folder between your virtual machine and host machine.
-
-Type **ls** to ensure that you are inside the directory that contains project.py, database_setup.py, and two directories named 'templates' and 'static'
-
-Now type **python database_setup.py** to initialize the database.
-
-Type **python lotsofmenus.py** to populate the database with restaurants and menu items. (Optional)
-
-Type **python project.py** to run the Flask web server. In your browser visit **http://localhost:5000** to view the restaurant menu app.  You should be able to view, add, edit, and delete menu items and restaurants.
 

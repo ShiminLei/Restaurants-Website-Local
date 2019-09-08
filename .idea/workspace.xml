@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec21788b-d728-4703-8d3c-810699eac68b" name="Default Changelist" comment="" />
+    <list default="true" id="ec21788b-d728-4703-8d3c-810699eac68b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/picture/addmenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/newrestaurant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/picture/restaurant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restaurantmenuwithusers.db" beforeDir="false" afterPath="$PROJECT_DIR$/restaurantmenuwithusers.db" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567975175613</updated>
-      <workItem from="1567975178198" duration="3283000" />
+      <workItem from="1567975178198" duration="5549000" />
     </task>
     <servers />
   </component>
