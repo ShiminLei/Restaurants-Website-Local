@@ -9,7 +9,7 @@ This is a project made for a Restaurant Menu Website.
 
 ![image](./picture/main.png)
 
-- You can click into a restaurant and check the menus and information. 
+- You can click into a restaurant and browse the menus and information. 
 
 ![image](./picture/restaurant.png)
 
