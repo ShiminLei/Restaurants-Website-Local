@@ -1,4 +1,6 @@
 #! /usr/bin/env python
+import demjson
+
 import string
 import random
 import requests
@@ -122,6 +124,13 @@ def gconnect():
            % access_token)
     h = httplib2.Http()
     result = json.loads(h.request(url, 'GET')[1])
+    # result_string = demjson.encode(result)
+    # print('############')
+    # print(result_string)
+    # fo = open("./foo.txt", "w")
+    # fo.write(result_string)
+    # fo.close()
+
     # If there was an error in the access token info, abort.
     if result.get('error') is not None:
         response = make_response(json.dumps(result.get('error')), 500)
